@@ -4,7 +4,7 @@
 	id="skin.EX-BXX"
 	version="0.0.1"
 	name="EX-BXX"
-	provider-name="T-Magnus">
+	provider-name="t-magnus">
 	<requires>
 		<import addon="xbmc.gui" version="4.0.0"/>
 		<import addon="service.skin.widgets" version="0.0.19"/>
