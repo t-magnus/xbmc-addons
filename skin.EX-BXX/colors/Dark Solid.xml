@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	<color name="Black">FF000000</color>
+	<color name="LTGrey">FFcccccc</color>
+	<color name="MEDGrey">FFaaaaaa</color>
+	<color name="DarkGrey">FF474747</color>
+	<color name="White">FFFFFFFF</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Blue">FF16A2ED</color>
+	<color name="Green">FF96BB20</color>
+	<color name="Orange">FFE99204</color>
+	<color name="FanartDiffuse">DD333333</color>
+	<color name="SolidBackground">FF222222</color>
+	<color name="NoFocusDiffuse">FFEFEFEF</color>
+	<color name="Accent">ff00bcf2</color>
+	<color name="Medium">FF474747</color>
+
+	<color name="Base">FF333333</color>
+	<color name="BaseButton">FF333333</color>
+	<color name="Base2">FF404040</color>
+	<color name="BaseSubmenuNF">FFFFFFFF</color>
+	<color name="BaseSubmenuFO">FFF0F0F0</color> <!--cccccc-->
+	<color name="BaseSubmenu2FO">FF333333</color> <!--828282-->
+	<color name="EPGChannel">FFAAAAAA</color>
+	<color name="EPGBase">FF757575</color>
+	<color name="OSDBackground">FF333333</color> <!--66000000-->
+	
+<!--Text colors-->
+	<color name="MenuFO">FF96BB20</color>
+	<color name="MenuNF">FFFFFFFF</color>
+	<color name="SubMenuNF">FF474747</color>
+	<color name="SubMenuFO">FFFFFFFF</color>
+	<color name="Disabled">40FFFFFF</color>
+	
+	<color name="OSDText">80000000</color>
+	
+	<color name="Title">FFFFFFFF</color>
+	<color name="SubTitle">FFcccccc</color>
+	<color name="Dialog">FFFFFFFF</color>
+	<color name="DialogTitle">FF000000</color>
+	<color name="DialogSubTitle">FF000000</color>
+	
+	<color name="HomeTime">FFFFFFFF</color>
+	<color name="HomeDate">FFFFFFFF</color>
+	<color name="GlobalTime">FF66ccff</color>
+	<color name="GlobalDate">DDd1d1d1</color>
+	
+	
+<!--Background colors-->
+	<color name="Background">FFFFFFFF</color>
+	<color name="BackgroundTrans">66D1D1D1</color>
+
+<!--ColorDiffuse-->	
+	<color name="WeatherDiffuse">BF000000</color>
+	
+</colors>
+
+<!--Opacities
+10%		19
+15%		26
+20%		32
+25%		40
+40%		66
+50%     80
+60%		99
+75%		BF
+87%     DD
+93%     EE
+100%	FF
+					COLORS
+					<color name="Color2">ff6aa6cb</color> light Blue (baby)
+					<color name="MenuFocus">FFff00cc</color> Pink
+					<color name="column3">dd0c2134</color> Dark Blue
+					<color name="column2">ff2d5a83</color> Med Blue
+					<color name="column3">dd266172</color> My Med Blue
+	                E99204 - Bright Orange
+					96BB20 - Bright Green
+					16A2ED - Bright Blue
+					0066cc - Windows 8 Med blue (bright)
+					66CCFF - Light Blue
+					
+					TechNet Newsletter
+					7fba00 Medium Green
+					00188f Royal Blue
+					00bcf2 Bright Lite Blue
+					
+-->

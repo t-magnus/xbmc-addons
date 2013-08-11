@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_50_List">
+		<description>List View (id=50)</description>
+		<control type="list" id="50">
+			<posx>80</posx>
+			<posy>155</posy>
+			<width>560</width>
+			<height>410</height>
+			<onleft>5000</onleft>
+			<onright>60</onright>
+			<onup>50</onup>
+			<ondown>50</ondown>
+			<pagecontrol>60</pagecontrol>
+			<viewtype label="535">list</viewtype>
+			<scrolltime tween="Quadratic" easing="out">250</scrolltime>
+			<animation effect="Slide" start="0" end="0,-45" time="350" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
+			<animation effect="Slide" start="0,0" end="-600,0" time="350" tween="quadratic" condition="Window.IsVisible(movieinformation)">Conditional</animation>
+			<itemlayout width="640" height="46">
+				<control type="image">
+					<width>640</width>
+					<height>44</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>BigButtonNF</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<width>600</width>
+					<font>Medium</font>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="640" height="46">
+				<control type="image">
+					<width>640</width>
+					<height>44</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>BigButtonFO</colordiffuse>
+					<animation effect="fade" start="100" end="50" condition="Control.HasFocus(5000)">Conditional</animation>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<width>600</width>
+					<font>Medium</font>
+					<textcolor>Focused</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</focusedlayout>
+		</control>
+
+		<!-- Square Image Icon -->
+		<control type="group">
+			<posx>850</posx>
+			<posy>220</posy>
+			<visible>Control.HasFocus(50) + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			<control type="group">
+				<control type="image">
+					<posx>-25</posx>
+					<posy>220</posy>
+					<width>250</width>
+					<height>75</height>
+					<include>Poster_SlideFO</include>
+					<texture border="5">ViewPoster/DropShadow.png</texture>
+					<colordiffuse>DropShadow</colordiffuse>
+					<animation type="Conditional"  condition="true" reversible="true">
+						<effect type="fade" delay="300" start="0" end="100" tween="quadratic" time="250" />
+						<effect type="zoom" delay="300" start="100" end="150" tween="quadratic" center="auto" time="450" />
+						<effect type="slide" delay="300" start="0,0" end="0,35" tween="back" time="450" />
+					</animation>
+				</control>
+				<control type="image">
+					<posx>-</posx>
+					<posy>-</posy>
+					<width>195</width>
+					<height>195</height>
+					<texture border="5">backgrounds/BG_White.png</texture>
+					<colordiffuse>Accent</colordiffuse>
+					<animation type="Conditional"  condition="true" reversible="true">
+						<effect type="fade" delay="300" start="0" end="100" tween="quadratic" time="450" />
+						<effect type="zoom" delay="300" start="100" end="130" tween="quadratic" center="auto" time="450" />
+					</animation>
+				</control>
+				<control type="image">
+					<width>195</width>
+					<height>195</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<bordersize>1</bordersize>
+					<colordiffuse>DialogBackground</colordiffuse>
+					<animation effect="zoom" delay="250" start="100" end="130" tween="back" center="auto" time="450" reversible="true" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<width>195</width>
+					<height>195</height>
+					<aspectratio align="center">keep</aspectratio>
+					<texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+					<animation effect="zoom" delay="250" start="100" end="130" tween="back" center="auto" time="450" reversible="true" condition="true">Conditional</animation>
+					<bordersize>1</bordersize>
+				</control>
+			</control>
+		</control>
+
+		<!-- Portrait Image Icon -->
+		<control type="group">
+			<posx>850</posx>
+			<posy>160</posy>
+			<visible>Control.HasFocus(50) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+			<animation type="Conditional" condition="ControlGroup(5000).HasFocus()">
+				<effect type="Slide" start="0" end="300" time="350" delay="600" tween="quadratic" />
+			</animation>
+			<animation effect="Slide" start="0,0" end="-525,0" time="350" tween="quadratic" condition="Window.IsVisible(movieinformation)">Conditional</animation>
+			<animation effect="Slide" start="0,0" end="0,50" time="350" delay="350" tween="quadratic" condition="!Window.IsVisible(movieinformation)">Conditional</animation>
+
+			<control type="group">
+				<control type="image">
+					<posx>-25</posx>
+					<posy>280</posy>
+					<width>250</width>
+					<height>75</height>
+					<include>Poster_SlideFO</include>
+					<texture border="5">ViewPoster/DropShadow.png</texture>
+					<colordiffuse>DropShadow</colordiffuse>
+					<animation type="Conditional"  condition="true" reversible="true">
+						<effect type="fade" delay="300" start="0" end="100" tween="quadratic" time="250" />
+						<effect type="zoom" delay="300" start="100" end="150" tween="quadratic" center="auto" time="450" />
+						<effect type="slide" delay="300" start="0,0" end="0,35" tween="back" time="450" />
+					</animation>
+				</control>
+				<control type="image">
+					<include>Poster_SlideFO</include>
+					<texture border="5">backgrounds/BG_White.png</texture>
+					<colordiffuse>Accent</colordiffuse>
+					<animation type="Conditional"  condition="true" reversible="true">
+						<effect type="fade" delay="300" start="0" end="100" tween="quadratic" time="450" />
+						<effect type="zoom" delay="300" start="100" end="130" tween="quadratic" center="auto" time="450" />
+					</animation>
+				</control>
+				<control type="image">
+					<include>Poster_Slide</include>
+					<texture>backgrounds/BG_White.png</texture>
+					<bordersize>1</bordersize>
+					<colordiffuse>DialogBackground</colordiffuse>
+					<animation effect="zoom" delay="250" start="100" end="130" tween="back" center="auto" time="450" reversible="true" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<include>Poster_SlideFO</include>
+					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+					<bordersize>5,5,5,5</bordersize>
+					<aspectratio align="center">scale</aspectratio>
+					<animation effect="zoom" delay="250" start="100" end="130" tween="back" center="auto" time="450" reversible="true" condition="true">Conditional</animation>
+					<visible>!IsEmpty(ListItem.Art(poster))</visible>
+				</control>
+				<control type="image">
+					<include>Poster_Slide</include>
+					<aspectratio align="center">keep</aspectratio>
+					<texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+					<animation effect="zoom" delay="250" start="100" end="130" tween="back" center="auto" time="450" reversible="true" condition="true">Conditional</animation>
+					<bordersize>1</bordersize>
+					<visible>IsEmpty(ListItem.Art(poster))</visible>
+				</control>
+			</control>
+
+			<!-- Media Flags -->	
+			<control type="grouplist">
+				<posx>260</posx>
+				<posy>-</posy>
+				<width>100</width>
+				<height>440</height>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<visible>![substring(ListItem.Label,Collection) | Window.IsVisible(movieinformation)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+				<animation effect="fade" start="100" end="0" time="350" condition="Window.IsVisible(movieinformation)">Conditional</animation>
+				<control type="image">
+					<include>Icons_Light</include>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture fallback="flags/default.png">$VAR[flag_Studio]</texture>
+					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + ![IsEmpty(ListItem.TVShowTitle) + IsEmpty(ListItem.Title)]</visible>
+				</control>				
+				<control type="image">
+					<description>Common Codec Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.VideoCodec,flags/codec/,.png]</texture>
+					<!-- Don't show if its one of the 500 divx codecs -->
+					<visible>![substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)] + ![substring(ListItem.FilenameAndPath,iso) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)]</visible>
+				</control>
+				<control type="image">
+					<description>Divx Codec Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>flags/codec/divx.png</texture>
+					<visible>[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)] + ![substring(ListItem.FilenameAndPath,iso) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)]</visible>
+				</control>
+				<control type="image">
+					<description>Video rez Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.VideoResolution,flags/type/,.png]</texture>
+					<visible>!substring(ListItem.FilenameAndPath,iso)</visible>
+				</control>
+				<control type="image">
+					<description>Bluray Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>flags/info/bluray.png</texture>
+					<visible>[substring(ListItem.FilenameAndPath,iso) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)]</visible>
+				</control>
+				<control type="image">
+					<description>HDDVD Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>flags/codec/hddvd.png</texture>
+					<visible>substring(ListItem.FilenameAndPath,hddvd)</visible>
+				</control>
+				<control type="image">
+					<description>DVD Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>flags/codec/dvd.png</texture>
+					<visible>[substring(ListItem.FilenameAndPath,dvd) + ![substring(ListItem.FilenameAndPath,hddvd) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)]]</visible>
+				</control>
+				<control type="image">
+					<description>TV Types Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>flags/codec/TV.png</texture>
+					<visible>[substring(ListItem.FilenameAndPath,pdtv) | substring(ListItem.FilenameAndPath,hdtv) | substring(ListItem.FilenameAndPath,dsr)] + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+				</control>
+				<control type="group">
+					<width>74</width>
+					<height>50</height>
+					<visible>!SubString(ListItem.Icon,Default) + ![Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<control type="image">
+						<include>Icons_Light</include>
+						<texture fallback="flags/defaultsound.png">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+					</control>
+					<control type="image">
+						<include>Icons_Light</include>
+						<texture>$INFO[ListItem.AudioChannels,flags/audio/,ch.png]</texture>
+					</control>
+				</control>
+				<control type="image">
+					<description>Aspectratio Image</description>
+					<include>Icons_Light</include>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.VideoAspect,flags/video/aspectratio/,.png]</texture>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include file="Defaults.xml" />
+	<include file="View_50_List.xml" />
+	<include file="View_51_List_Programs.xml" />
+	<include file="View_500_Slide_Poster.xml" />
+	<include file="View_501_Slide_Poster_Wrap.xml" />
+	<include file="View_502_Slide_Wide.xml" />
+	<include file="View_503_Slide_Wide_Wrap.xml" />
+	<include file="View_504_Tile_Poster.xml" />	
+	<include file="IncludesHomeSubmenu.xml" />
+	<include file="IncludesAnimations.xml" />
+	<include file="IncludesPageControl.xml" />
+	<include file="IncludesDialogs.xml" />
+	<include file="IncludesBackgrounds.xml" />
+	<include file="ViewsTV.xml" />
+	<include file="MenuTV.xml" />
+	<include file="HomeMenu.xml" />
+	<include file="HomeMenuSub.xml" />
+	<include file="HomeMenuWidgets.xml" />
+	<include file="HomeSettings.xml" />
+	<include file="HomeStart.xml" />
+	<include file="HomeWeather.xml" />
+	<include file="Variables.xml" />
+
+	<!--CONSTANTS-->
+	<constant name="screen_Width">1280</constant>
+	<constant name="screen_Height">720</constant>
+	<constant name="screen_Center">640,360</constant>
+	<constant name="PosterOpacity">75</constant>
+	<constant name="ThumbOpacity">75</constant>
+	<constant name="fadetime_Thumb">300</constant>
+	<constant name="fadetime_Fanart">300</constant>
+	<constant name="fadetime_Slideshow">1200</constant>
+	<constant name="transition_Open">350</constant>
+	<constant name="transition_Close">250</constant>
+	<constant name="fade_SubMenu">25</constant>
+	<constant name="zoom_SubMenu">100</constant>
+	<constant name="zoom_SubMenuTile">125</constant>
+	<constant name="zoomtime_SubMenu">200</constant>
+	<constant name="OverlayOpacity">90</constant>
+
+	<include name="HiddenButton">
+		<posx>-13</posx>
+		<posy>-13</posy>
+		<width>1</width>
+		<height>1</height>
+		<label>-</label>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus>-</texturefocus>
+	</include>
+	<include name="Dimensions_Fullscreen">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</include>
+
+	<!-- Global -->
+	<include name="Big_Button">
+		<texturefocus border="3">buttons/ButtonFO.png</texturefocus>
+		<texturenofocus border="3">buttons/BigButtonNF.png</texturenofocus>
+	</include>
+
+	<!-- Veiws -->
+
+	<include name="Poster_Slide">
+		<width>195</width>
+		<height>275</height>
+	</include>
+	<include name="Poster_SlideFO">
+		<posx>-</posx>
+		<width>195</width>
+		<height>275</height>
+	</include>
+	<include name="Thumb_Slide">
+		<width>395</width>
+		<height>220</height>
+	</include>
+	<include name="Icons">
+		<width>74</width>
+		<height>50</height>
+		<colordiffuse>IconOverlay</colordiffuse>
+	</include>
+	<include name="Icons_Light">
+		<width>74</width>
+		<height>50</height>
+		<colordiffuse>IconOverlayLight</colordiffuse>
+	</include>
+
+
+
+	<!-- Common Values - Menu -->
+
+	<include name="CommonValues_HomeStart">
+		<posx>2</posx>
+		<posy>2</posy>
+		<height>343</height>
+		<width>203</width>
+	</include>
+	<include name="CommonValues_Menu">
+		<posx>-60</posx>
+		<height>67</height>
+		<width>233</width>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+
+	<!-- Common Values - Submenu -->
+
+	<include name="Container_SubMenu">
+		<width>1080</width>
+		<height>435</height>
+		<onback>9000</onback>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<orientation>horizontal</orientation>
+		<scrolltime>150</scrolltime>
+	</include>
+	<include name="SubMenu_Bg">
+		<posx>2</posx>
+		<posy>2</posy>
+		<width>203</width>
+		<height>113</height>
+	</include>
+	<include name="SubMenu_ImageBg">
+		<posx>2</posx>
+		<posy>2</posy>
+		<width>203</width>
+		<height>113</height>
+		<texture>backgrounds/BG_White.png</texture>
+		<aspectratio>stretch</aspectratio>
+	</include>
+	<include name="SubMenu_Label">
+		<posx>5</posx>
+		<posy>60</posy>
+		<width>190</width>
+		<height>16</height>
+		<font>SubMenu</font>
+		<align>left</align>
+		<textcolor>SubMenuFO</textcolor>
+	</include>
+	<include name="SubMenu_Label2">
+		<posx>8</posx>
+		<posy>95</posy>
+		<width>190</width>
+		<height>16</height>
+		<font>SubMenu</font>
+		<align>left</align>
+		<textcolor>SubMenuFO</textcolor>
+	</include>
+	<include name="SubMenu_LabelBg">
+		<posx>5</posx>
+		<posy>5</posy>
+		<width>200</width>
+		<height>110</height>
+		<aspectratio>stretch</aspectratio>
+	</include>
+	<include name="SubMenu_ImageBgShadow">
+		<posx>2</posx>
+		<posy>5</posy>
+		<width>200</width>
+		<height>110</height>
+		<aspectratio>stretch</aspectratio>
+		<texture>backgrounds/BG_WhiteShadow.png</texture>
+	</include>
+	<include name="SubMenu_Icon_Fanart">
+		<posx>5</posx>
+		<posy>5</posy>
+		<width>200</width>
+		<height>110</height>
+		<aspectratio>scale</aspectratio>
+	</include>
+	<include name="SubMenu_Icon_Poster">
+		<posx>5</posx>
+		<posy>5</posy>
+		<width>200</width>
+		<height>110</height>
+		<aspectratio align="right">keep</aspectratio>
+	</include>
+
+	<!-- Alaska HD -->
+
+	<include name="Global_HeadingSectionVars">
+		<posy>7</posy>
+		<width>974</width>
+		<height>35</height>
+		<font>XLargeCaps</font>
+		<textcolor>Title</textcolor>
+	</include>
+
+	<include name="Global_HeadingDetailVars">
+		<posy>45</posy>
+		<posx>-</posx>
+		<width>974</width>
+		<height>25</height>
+		<haspath>true</haspath>
+		<font>SmallLow</font>
+		<textcolor>Accent</textcolor>
+	</include>
+
+	<include name="Global_HeadingAlbumDetailVars">
+		<posy>75</posy>
+		<posx>-</posx>
+		<width>974</width>
+		<height>25</height>
+		<font>SmallLow</font>
+		<textcolor>SubTitle</textcolor>
+	</include>
+
+	<!-- Re-Focus -->	
+
+	<!--ID's-->
+	<include name="WindowID">
+		<width>520</width>
+		<height>14</height>
+		<textcolor>Blue</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+	<include name="DialogID">
+		<width>520</width>
+		<height>14</height>
+		<textcolor>Green</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>left</align>
+	</include>
+	<include name="PathID">
+		<posx>10r</posx>
+		<posy>10</posy>
+		<width>520</width>
+		<height>14</height>
+		<textcolor>Blue</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID">
+		<posx>10r</posx>
+		<posy>32</posy>
+		<width>520</width>
+		<height>14</height>
+		<textcolor>Red</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>right</align>
+	</include>
+
+	<include name="info_Sub">
+		<height>17</height>
+		<aligny>center</aligny>
+		<font>Small</font>
+		<textcolor>Black</textcolor>
+		<visible>!StringCompare(ListItem.Label,..)</visible>
+	</include>
+	<include name="info_Title">
+		<height>19</height>
+		<aligny>center</aligny>
+		<font>Medium</font>
+		<textcolor>Black</textcolor>
+	</include>
+
+	<!--watchedOverlay-->
+	<include name="overlay_Watched">
+		<posx>100</posx>
+		<posy>150</posy>
+		<width>25</width>
+		<height>25</height>
+		<texture>$INFO[ListItem.Overlay,overlays/,/default-fo.png]</texture>
+		<colordiffuse>Blue</colordiffuse>
+		<aspectratio align="center">stretch</aspectratio>
+		<visible>[Container.Content(movies) + Skin.HasSetting(overlay.movies)] | [Container.Content(tvshows) + Skin.HasSetting(overlay.tvshows)] | [Container.Content(episodes) + Skin.HasSetting(overlay.episodes)] | [Container.Content(seasons) + Skin.HasSetting(overlay.tvshows)] | [Container.Content(Files) + Container.HasFiles] + ![SubString(Container.FolderPath,plugin://) | SubString(Container.FolderPath,sources://)]</visible>
+	</include>
+	<!--resumableOverlay-->
+	<include name="overlay_Resumable">
+		<posx>102</posx>
+		<posy>152</posy>
+		<width>25</width>
+		<height>25</height>
+		<texture>overlays/OverlayResumable.png</texture>
+		<colordiffuse>Orange</colordiffuse>
+		<aspectratio align="center">stretch</aspectratio>
+		<visible>[Container.Content(movies) | Container.Content(episodes)] + ListItem.IsResumable + Skin.HasSetting(overlay.resumable) + IsEmpty(ListItem.Property(ReleaseDate) + !SubString(Container.FolderPath,special://skin/playlists/Movies In Progress.xsp)</visible>
+	</include>
+
+	<!--resumeable unwatched overlays thumbs-->
+	<include name="overlay_Resumable_Thumb">
+		<posx>210</posx>
+		<posy>100</posy>
+		<width>25</width>
+		<height>25</height>
+		<texture>overlays/OverlayResumable.png</texture>
+		<colordiffuse>Orange</colordiffuse>
+		<aspectratio align="center">stretch</aspectratio>
+		<visible>[Container.Content(movies) | Container.Content(episodes)] + ListItem.IsResumable + Skin.HasSetting(overlay.resumable) + IsEmpty(ListItem.Property(ReleaseDate) + !SubString(Container.FolderPath,special://skin/playlists/Movies In Progress.xsp)</visible>
+	</include>
+	<include name="overlay_UnWatched_Thumb">
+		<posx>210</posx>
+		<posy>100</posy>
+		<width>25</width>
+		<height>25</height>
+		<texture>$INFO[ListItem.Overlay,overlays/,/default-fo.png]</texture>
+		<colordiffuse>Blue</colordiffuse>
+		<aspectratio align="center">stretch</aspectratio>
+		<visible>[Container.Content(movies) + Skin.HasSetting(overlay.movies)] | [Container.Content(tvshows) + Skin.HasSetting(overlay.tvshows)] | [Container.Content(episodes) + Skin.HasSetting(overlay.episodes)] | [Container.Content(seasons) + Skin.HasSetting(overlay.tvshows)] | [Container.Content(Files) + Container.HasFiles] + ![SubString(Container.FolderPath,plugin://) | SubString(Container.FolderPath,sources://)]</visible>
+	</include>
+
+	<!-- PVR -->
+
+	<include name="column_Header">
+		<height>20</height>
+		<font>Small</font>
+		<textcolor>White</textcolor>
+		<aligny>center</aligny>
+	</include>
+	<include name="column">
+		<width>98</width>
+		<height>42</height>
+		<texture border="8">views/column.png</texture>
+	</include>
+	<include name="column_Label">
+		<height>38</height>
+		<font>Small</font>
+		<textcolor>White</textcolor>
+		<selectedcolor>Accent</selectedcolor>
+	</include>
+	<include name="column_Label-focus">
+		<height>38</height>
+		<font>Small</font>
+		<textcolor>White</textcolor>
+		<selectedcolor>Accent</selectedcolor>
+	</include>
+	<include name="column_Left">
+		<width>98</width>
+		<height>42</height>
+		<texture border="8">views/column_Left.png</texture>
+	</include>
+	<include name="column_Right">
+		<width>98</width>
+		<height>42</height>
+		<texture border="8">views/column_Right.png</texture>
+	</include>
+	<include name="column_Top">
+		<width>98</width>
+		<height>42</height>
+		<texture border="8">views/column_Top.png</texture>
+	</include>
+
+</includes>

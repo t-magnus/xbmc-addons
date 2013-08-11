@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window id="115">
+    <defaultcontrol always="true">901</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <visible>[VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + !Player.Caching</visible>
+    <controls>
+        <control type="group">
+            <posy>310</posy>
+			<control type="label">
+                <posx>-</posx>
+                <posy>100</posy>
+                <width>1280</width>
+				<height>50</height>
+                <align>center</align>
+				<font>Large</font>
+				<textcolor>White</textcolor>
+                <label>$VAR[Player_Status]</label>
+            </control>
+            <control type="image">
+                <posx>590</posx>
+                <posy>-</posy>
+                <width>100</width>
+				<height>100</height>
+                <align>center</align>
+                <texture>OSD\player\Pause.png</texture>
+                <visible>player.paused</visible>
+            </control>            
+            <control type="image">
+                <posx>590</posx>
+                <posy>-</posy>
+                <width>100</width>
+				<height>100</height>
+                <align>center</align>
+                <texture>OSD\player\ForwardNF.png</texture>
+                <visible>player.forwarding | player.forwarding2x | player.forwarding4x | player.forwarding8x | player.forwarding16x | player.forwarding32x</visible>
+            </control>
+            <control type="image">
+                <posx>590</posx>
+                <posy>-</posy>
+                <width>100</width>
+				<height>100</height>
+                <align>center</align>
+                <texture>OSD\player\RewindNF.png</texture>
+                <visible>player.rewinding | player.rewinding2x | player.rewinding4x | player.rewinding8x | player.rewinding16x | player.rewinding32x</visible>
+            </control>
+        </control>
+    </controls>
+</window>

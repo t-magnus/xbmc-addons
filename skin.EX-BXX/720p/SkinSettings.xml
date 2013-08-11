@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="56">
+    <defaultcontrol always="true">100</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+	<onload condition="Window.Previous(home) + !Skin.HasSetting(DisabledSplash)">ActivateWindow(60)</onload>
+    <controls>
+        <include>GlobalBackground</include>
+        <control type="list" id="100">
+            <description>List</description>
+            <posx>10</posx>
+            <posy>110</posy>
+            <width>300</width>
+            <height>480</height>
+            <onup>100</onup>
+            <ondown>100</ondown>
+            <onleft>-</onleft>
+            <onright condition="!Container(100).Hasfocus(4)">99</onright>
+			<onright condition="Container(100).Hasfocus(4)">700</onright>
+            <scrolltime>0</scrolltime>
+            <orientation>vertical</orientation>
+            <pagecontrol>-</pagecontrol>
+            <itemlayout height="42" width="200">
+                <control type="image">
+                    <width>200</width>
+                    <height>40</height>
+                    <texture border="1">buttons/ButtonNF.png</texture>
+                </control>
+                <control type="label">
+                    <posx>20</posx>
+                    <width>160</width>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="42" width="200">
+                <control type="image">
+                    <width>200</width>
+                    <height>40</height>
+                    <texture border="3">buttons/ButtonWhite.png</texture>
+                    <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+					<colordiffuse>Accent</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>20</posx>
+                    <width>160</width>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </focusedlayout>
+            <content>
+                <item id="1">
+                    <description>Background Visuals</description>
+                    <label>Global Settings</label>
+                    <onclick>-</onclick>
+                </item>
+                <item id="2">
+                    <description>Lyrics/Subtitles</description>
+                    <label>Subtitles</label>
+                    <onclick>-</onclick>
+                </item>
+				<item id="4">
+                    <description>View Settings</description>
+                    <label>Veiw Settings</label>
+                    <onclick>-</onclick>
+                </item>
+				<item id="5">
+                    <description>OSD Settings</description>
+                    <label>OSD</label>
+                    <onclick>-</onclick>
+                </item>
+                <item id="3">
+                    <description>Debug</description>
+                    <label>Debugging</label>
+                    <onclick>-</onclick>
+                </item>
+				
+            </content>
+        </control>
+        <control type="group" id="99">
+            <posx>340</posx>
+            <posy>110</posy>
+            <control type="grouplist" id="200">
+                <description>Global Settings</description>
+                <width>820</width>
+                <height>480</height>
+                <itemgap>2</itemgap>
+                <onup>200</onup>
+                <ondown>200</ondown>
+                <onleft>100</onleft>
+                <onright>-</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(1)</visible>
+				
+                <control type="radiobutton" id="201">
+                    <description>Background Visualiser</description>
+                    <width>820</width>
+                    <align>left</align>
+					<label>Background Visualizer</label>
+                    <onclick>Skin.ToggleSetting(NoBackgroundVisualiser)</onclick>
+                    <selected>Skin.HasSetting(NoBackgroundVisualiser)</selected>
+                </control>
+                <control type="radiobutton" id="202">
+                    <description>Background Video</description>
+                    <width>820</width>
+                    <align>left</align>
+                    <label>Background Video</label>
+                    <onclick>Skin.ToggleSetting(NoBackgroundVideo)</onclick>
+                    <selected>Skin.HasSetting(NoBackgroundVideo)</selected>
+                </control>
+			<!--Custom Fanart-->
+				<control type="radiobutton" id="203">
+					<label>$LOCALIZE[31936]</label>
+					<width>820</width>
+                    <align>left</align>
+					<onclick>Skin.ToggleSetting(slideshow.fanart)</onclick>
+					<selected>Skin.HasSetting(slideshow.fanart)</selected>
+				</control>
+				<control type="button" id="204">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31937]</label>
+					<onclick>Skin.SetPath(slideshow.custom)</onclick>
+					<label2>[COLOR=Accent]$INFO[Skin.String(slideshow.custom)][/COLOR]</label2>
+					<enable>Skin.HasSetting(slideshow.fanart)</enable>
+					<visible>Skin.HasSetting(slideshow.fanart)</visible>
+				</control>			
+            </control>
+			<control type="grouplist" id="300">
+                <description>Lyrics/Subtitles</description>
+                <width>820</width>
+                <height>480</height>
+                <itemgap>2</itemgap>
+                <onup>200</onup>
+                <ondown>200</ondown>
+                <onleft>100</onleft>
+                <onright>-</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(2)</visible>
+                <control type="button" id="301">
+                    <description>Default Button</description>
+                    <width>820</width>
+                    <align>left</align>
+                    <label>lyrics</label>
+                    <onclick>Skin.SetAddon(LyricPath,xbmc.python.lyrics)</onclick>
+                </control>
+                <control type="button" id="302">
+                    <description>Default Button</description>
+                    <width>820</width>
+                    <align>left</align>
+                    <label>subtitles</label>
+                    <onclick>Skin.SetAddon(SubtitlePath,xbmc.python.subtitles)</onclick>
+                </control>
+            </control>
+            <control type="grouplist" id="400">
+                <description>Control Area</description>
+                <width>820</width>
+                <height>480</height>
+                <itemgap>2</itemgap>
+                <onup>200</onup>
+                <ondown>200</ondown>
+                <onleft>100</onleft>
+                <onright>-</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(2)</visible>
+                <control type="label" id="401">
+                    <description>Default Button</description>
+                    <width>800</width>
+                    <align>right</align>
+                    <label>$INFO[Skin.String(LyricPath)]</label>
+                    <visible>!IsEmpty(Skin.String(LyricPath))</visible>
+                </control>
+                <control type="label" id="402">
+                    <description>Default Button</description>
+                    <width>800</width>
+                    <align>right</align>
+                    <label>CU Lyrics</label>
+                    <visible>IsEmpty(Skin.String(LyricPath))</visible>
+                </control>
+                <control type="label" id="403">
+                    <description>Default Button</description>
+                    <width>800</width>
+                    <align>right</align>
+                    <label>$INFO[Skin.String(SubtitlesPath)]</label>
+                    <visible>!IsEmpty(Skin.String(SubtitlesPath))</visible>
+                </control>
+                <control type="label" id="404">
+                    <description>Default Button</description>
+                    <width>800</width>
+                    <align>right</align>
+                    <label>XBMC Subtitles</label>
+                    <visible>IsEmpty(Skin.String(SubtitlesPath))</visible>
+                </control>
+            </control>			
+            <control type="grouplist" id="500">
+                <description>Debugging</description>
+                <width>820</width>
+                <height>480</height>
+                <itemgap>2</itemgap>
+                <onup>500</onup>
+                <ondown>500</ondown>
+                <onleft>100</onleft>
+                <onright>-</onright>
+                <orientation>vertical</orientation>
+                <visible>Container(100).Hasfocus(3)</visible>
+                <control type="radiobutton" id="501">
+                    <description>Enable Debug Grid</description>
+                    <width>820</width>
+                    <align>left</align>
+                    <label>Enable Debug Grid</label>
+                    <onclick>Skin.ToggleSetting(DebugGrid)</onclick>
+                    <selected>Skin.HasSetting(DebugGrid)</selected>
+                </control>
+                <control type="radiobutton" id="502">
+                    <description>Disable Debug Info</description>
+                    <width>820</width>
+                    <align>left</align>
+                    <label>Hide Debug Info</label>
+                    <onclick>Skin.ToggleSetting(HideDebugInfo)</onclick>
+                    <selected>Skin.HasSetting(HideDebugInfo)</selected>
+                </control>
+            </control>			
+			<control type="grouplist" id="700">
+				<description>Veiw Settings</description>
+                <width>820</width>
+                <height>700</height>
+                <itemgap>2</itemgap>
+                <onup>700</onup>
+                <ondown>700</ondown>
+                <onleft>100</onleft>
+                <onright>-</onright>
+                <orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(4)</visible>
+				
+				<control type="radiobutton" id="713">
+                    <description>Disable Splash</description>
+                    <width>820</width>
+                    <align>left</align>
+					<label>Disable Transition Splash</label>
+                    <onclick>Skin.ToggleSetting(DisabledSplash)</onclick>
+                    <selected>Skin.HasSetting(DisabledSplash)</selected>
+                </control>
+				
+				<control type="radiobutton" id="722">
+					<label>Hide Hinting Labels</label>
+					<width>820</width>
+                    <align>left</align>
+					<onclick>Skin.ToggleSetting(labels.disable)</onclick>
+					<selected>Skin.HasSetting(labels.disable)</selected>
+				</control>
+			<!--menu indicator-->
+				<control type="radiobutton" id="703">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31053]</label>
+					<onclick>Skin.ToggleSetting(indicator.enable)</onclick>
+					<selected>Skin.HasSetting(indicator.enable)</selected>
+				</control>
+			<!--item count-->
+				<control type="radiobutton" id="704">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31040]</label>
+					<onclick>Skin.ToggleSetting(numitems.enable)</onclick>
+					<selected>Skin.HasSetting(numitems.enable)</selected>
+				</control>
+			<!--sortletter-->
+				<control type="radiobutton" id="705">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31037]</label>
+					<onclick>Skin.ToggleSetting(sortletter.enable)</onclick>
+					<selected>Skin.HasSetting(sortletter.enable)</selected>
+				</control>
+			<!--media overlays-->
+				<control type="radiobutton" id="706">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31025]</label>
+					<onclick>Skin.ToggleSetting(overlay.enable)</onclick>
+					<selected>!Skin.HasSetting(overlay.enable)</selected>
+				</control>
+				<control type="radiobutton" id="707">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31922]</label>
+					<onclick>Skin.ToggleSetting(overlay.movies)</onclick>
+					<selected>Skin.HasSetting(overlay.movies)</selected>
+				</control>
+				<control type="radiobutton" id="708">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31921]</label>
+					<onclick>Skin.ToggleSetting(overlay.tvshows)</onclick>
+					<selected>Skin.HasSetting(overlay.tvshows)</selected>
+				</control>
+				<control type="radiobutton" id="709">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31924]</label>
+					<onclick>Skin.ToggleSetting(overlay.episodes)</onclick>
+					<selected>Skin.HasSetting(overlay.episodes)</selected>
+				</control>
+				<control type="radiobutton" id="710">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31920]</label>
+					<onclick>Skin.ToggleSetting(overlay.files)</onclick>
+					<selected>Skin.HasSetting(overlay.files)</selected>
+				</control>
+				<control type="radiobutton" id="711">
+					<width>820</width>
+                    <align>left</align>
+					<label>$LOCALIZE[31918]</label>
+					<onclick>Skin.ToggleSetting(overlay.resumable)</onclick>
+					<selected>Skin.HasSetting(overlay.resumable)</selected>
+				</control>
+			</control>
+			
+			
+			<control type="grouplist" id="800">
+				<description>OSD Settings</description>
+                <width>820</width>
+                <height>700</height>
+                <itemgap>2</itemgap>
+                <onup>700</onup>
+                <ondown>700</ondown>
+                <onleft>100</onleft>
+                <onright>-</onright>
+                <orientation>vertical</orientation>
+				<visible>Container(100).Hasfocus(5)</visible>
+				
+				<control type="radiobutton" id="713">
+                    <description>Video Info on player controls</description>
+                    <width>820</width>
+                    <align>left</align>
+					<label>Display Video Info with Player Controls</label>
+                    <onclick>Skin.ToggleSetting(Player.VideoInfo)</onclick>
+                    <selected>Skin.HasSetting(Player.VideoInfo)</selected>
+                </control>
+			</control>
+        </control>
+    </controls>
+</window>
