@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="602">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>dialogOpen</include>
+	<controls>
+		<include>GlobalOverlay</include>
+		<control type="group">
+			<posx>415</posx>
+			<posy>90</posy>
+			<control type="group">
+				<control type="image">
+					<width>450</width>
+					<height>550</height>
+					<include>dialogWindow</include>
+				</control>
+				<control type="label">
+					<description>heading label</description>
+					<width>450</width>
+					<posy>10</posy>
+					<label>$LOCALIZE[19047]</label>
+					<include>dialog_Windowtitle</include>
+				</control>
+				<control type="group">
+					<posx>19</posx>
+					<posy>65</posy>
+					<control type="image">
+						<width>410</width>
+						<include>dialog_Separator</include>
+					</control>
+					<control type="list" id="100">
+						<posy>10</posy>
+						<width>420</width>
+						<height>240</height>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>100</onup>
+						<ondown>100</ondown>
+						<scrolltime>200</scrolltime>
+						<itemlayout height="40">
+							<control type="image">
+								<width>410</width>
+								<height>40</height>
+								<include>dialog_CommonList</include>
+							</control>
+							<control type="label">
+								<width>420</width>
+								<height>36</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Small</font>
+								<include>dialog_CommonListItem</include>
+							</control>
+							<control type="label">
+								<posx>395</posx>
+								<width>420</width>
+								<height>36</height>
+								<align>right</align>
+								<label>$INFO[ListItem.Label2]</label>
+								<font>Small</font>
+								<include>dialog_CommonListItem</include>
+							</control>
+						</itemlayout>
+						<focusedlayout height="40">
+							<control type="image">
+								<width>410</width>
+								<include>dialog_CommonList</include>
+							</control>
+							<control type="label">
+								<width>420</width>
+								<height>36</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Small</font>
+								<include>dialog_CommonListItem</include>
+							</control>
+							<control type="label">
+								<posx>395</posx>
+								<width>420</width>
+								<height>36</height>
+								<align>right</align>
+								<label>$INFO[ListItem.Label2]</label>
+								<font>Small</font>
+								<include>dialog_CommonListItem</include>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<label>$LOCALIZE[369]</label>
+								<label2>$INFO[ListItem.Title]</label2>
+								<onclick>-</onclick>
+							</item>
+							<item id="2">
+								<label>$LOCALIZE[552]</label>
+								<label2>$INFO[ListItem.StartDate]</label2>
+								<onclick>-</onclick>
+							</item>
+							<item id="3">
+								<label>$LOCALIZE[142]</label>
+								<label2>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]</label2>
+								<onclick>-</onclick>
+							</item>
+							<item id="4">
+								<label>$LOCALIZE[19148]</label>
+								<label2>$INFO[ListItem.ChannelName]</label2>
+								<onclick>-</onclick>
+							</item>
+							<item id="5">
+								<label>$LOCALIZE[180]</label>
+								<label2> $INFO[ListItem.Duration]</label2>
+								<onclick>-</onclick>
+							</item>
+							<item id="5">
+								<label>$LOCALIZE[135]</label>
+								<label2>$INFO[ListItem.Genre]</label2>
+								<onclick>-</onclick>
+							</item>
+						</content>
+					</control>
+					<!--description-->
+					<control type="textbox" id="400">
+						<posx>15</posx>
+						<posy>240</posy>
+						<width>380</width>
+						<height>165</height>
+						<label fallback="416">$INFO[ListItem.Plot]</label>
+						<font>Small</font>
+						<textcolor>White</textcolor>
+						<align>justify</align>
+					</control>
+				</control>
+			</control>
+			<!-- dialog controls -->
+			<control type="group" id="9000">
+				<posy>485</posy>
+				<posx>34</posx>
+				<!--switch-->
+				<control type="button" id="5">
+					<label>$LOCALIZE[19165]</label>
+					<onleft>7</onleft>
+					<onright>6</onright>
+					<onup>11</onup>
+					<ondown>11</ondown>
+					<width>120</width>
+					<textoffsetx>5</textoffsetx>
+					<texturenofocus colordiffuse="ButtonNF" border="3">buttons/ButtonNFalt.png</texturenofocus>
+				</control>
+				<!--record-->
+				<control type="button" id="6">
+					<posx>130</posx>
+					<label>$LOCALIZE[264]</label>
+					<onleft>5</onleft>
+					<onright>7</onright>
+					<onup>10</onup>
+					<ondown>10</ondown>
+					<width>120</width>
+					<textoffsetx>5</textoffsetx>
+					<texturenofocus colordiffuse="ButtonNF" border="3">buttons/ButtonNFalt.png</texturenofocus>
+				</control>
+				<!--ok-->
+				<control type="button" id="7">
+					<description>No button</description>
+					<posx>260</posx>
+					<label>$LOCALIZE[186]</label>
+					<onleft>6</onleft>
+					<onright>5</onright>
+					<onup>10</onup>
+					<ondown>10</ondown>
+					<width>120</width>
+					<textoffsetx>5</textoffsetx>
+					<texturenofocus colordiffuse="ButtonNF" border="3">buttons/ButtonNFalt.png</texturenofocus>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>
