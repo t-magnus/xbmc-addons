@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	<color name="Black">FF000000</color>
+	<color name="LTGrey">FFcccccc</color>
+	<color name="MEDGrey">FFaaaaaa</color>
+	<color name="DarkGrey">FF474747</color>
+	<color name="White">FFFFFFFF</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Blue">FF16A2ED</color>
+	<color name="Green">FF96BB20</color>
+	<color name="Orange">FFE99204</color>
+	<color name="Accent">ff00bcf2</color>
+
+	<color name="Base">FFbcbcbc</color>
+	<color name="BaseButton">FF333333</color>
+	<color name="Base2">FFcccccc</color>
+	<color name="BaseSubmenuNF">FFf4f4f4</color>
+	<color name="BaseSubmenuFO">FFeaeaea</color>
+	<color name="BaseSubmenu2FO">FFbbbbbb</color>
+	<color name="OSDBase">FF333333</color>
+	
+	<!-- Global Colors -->
+	<color name="Plot">FF787878</color>
+	<color name="Rating">FF474747</color>
+	<color name="Title">FF646464</color>
+	<color name="SubTitle">FF8c8c8c</color>
+	<color name="SubTitleDark">FF333333</color>
+	<color name="IconOverlay">FF474747</color>
+	<color name="IconOverlayLight">FF474747</color>	
+	<color name="NoVideoIcon">40ffffff</color>
+	<color name="TVStationIconDiffuse">80ffffff</color>
+	<color name="ViewsNF">80ffffff</color>
+	<color name="SettingsHint">FF333333</color>
+	<color name="DropShadow">BF333333</color>
+	<color name="Cloud">FF333333</color>
+	
+<!-- Dialog\OSD Colors -->
+	<color name="DialogBackground">FFeaeaea</color>
+	<color name="OSDBackground">FF333333</color>
+	<!-- Text -->
+	<color name="Dialog">FFFFFFFF</color>
+	<color name="DialogTitle">FF474747</color>
+	<color name="DialogSubTitle">FF000000</color>
+	<color name="OSDText">80000000</color>
+
+<!-- Button Colors -->
+	<color name="ButtonDisabled">FFffffff</color>
+	<color name="ButtonNF">FFeaeaea</color>
+	<color name="ButtonFO">FFd2d2d2</color>
+	<color name="BigButtonDisabled">40F0F0F0</color>
+	<color name="BigButtonFO">FFffffff</color>
+	<color name="BigButtonNF">FF333333</color>
+	<!-- Text -->
+	<color name="Label">FFbbbbbb</color>
+	<color name="Selected">ff646464</color>
+	<color name="Disabled">40ffffff</color>
+	<color name="Focused">FFffffff</color>
+	
+<!-- Home/Submenu Colors -->
+	<color name="SubmenuDisabled">FFeaeaea</color>
+	<color name="SubmenuNF">FFffffff</color>
+	<color name="SubmenuFO">FF78787878</color>
+	<!-- Text -->
+	<color name="SubmenuLabel">FF787878</color>
+	<color name="SubmenuSelected">FFbbbbbb</color>
+	<color name="SubmenuDisabled">40ffffff</color>
+	<color name="SubmenuFocused">FFffffff</color>
+	<color name="SubmenuPlot">FFffffff</color>
+	<color name="MenuFO">FF96BB20</color>
+	<color name="MenuNF">FFbbbbbb</color>
+
+<!-- EPG -->
+	<color name="EPGChannelColumn">FFe1e1e1</color>
+	<color name="EPGChannelColumnFO">FFbbbbbb</color>
+	<color name="EPGProgramColumn">FFf0f0f0</color>
+	<color name="EPGProgramColumnFO">FFFFFFFF</color>
+	<color name="EPGBackground">80333333</color>
+	<color name="EPGOSD">FFfafafa</color>
+	<!-- Text -->
+	<color name="EPGHeader">FF474747</color>
+	<color name="EPGSelected">FFc7f064</color>
+	<color name="EPGChannel">FF474747</color>
+	<color name="EPGChannelFO">FF474747</color>
+	<color name="EPGProgram">FF474747</color>
+	<color name="EPGProgramFO">FFFFFFFF</color>
+	<color name="EPGTitle">FF474747</color>
+	<color name="EPGSubtitle">ff00bcf2</color>
+	<color name="EPGPlot">FF333333</color>
+	
+<!-- Weather -->
+	<color name="WeatherTitle">FF474747</color>
+	<color name="WeatherSubTitle">FF8c8c8c</color>
+	<color name="WeatherText">FFbbbbbb</color>
+	<color name="WeatherText2">FF474747</color>
+
+<!-- Time\Date -->
+	<color name="HomeTime">FF474747</color>
+	<color name="HomeDate">FF474747</color>
+	<color name="GlobalTime">FF474747</color>
+	<color name="GlobalDate">FF474747</color>
+		
+<!-- Background Colors -->
+	<color name="SolidBackground">FFfbfbfb</color>
+	<color name="NoFocusDiffuse">FFEFEFEF</color>
+	<color name="RSSbackground">ff474747</color>
+	
+<!-- Color Diffuse -->	
+	<color name="WeatherDiffuse">FF474747</color>
+	<color name="WeatherDiffuse2">FF474747</color>
+	<color name="FanartDiffuse">DDffffff</color>
+	<color name="VideoDiffuse">FFffffff</color>
+	
+</colors>
+<!-- 
+
+Opacities
+10%		19
+15%		26
+20%		32
+25%		40
+40%		66
+50%     80
+60%		99
+75%		BF
+87%     DD
+93%     EE
+100%	FF
+
+COLORS
+<color name="Color2">ff6aa6cb</color> light Blue (baby)
+<color name="MenuFocus">FFff00cc</color> Pink
+<color name="column3">dd0c2134</color> Dark Blue
+<color name="column2">ff2d5a83</color> Med Blue
+<color name="column3">dd266172</color> My Med Blue
+E99204 - Bright Orange
+96BB20 - Bright Green
+16A2ED - Bright Blue
+0066cc - Windows 8 Med blue (bright)
+66CCFF - Light Blue
+					
+TechNet Newsletter
+7fba00 Medium Green
+00188f Royal Blue
+00bcf2 Bright Lite Blue
+					
+-->

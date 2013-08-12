@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window id="12">
+    <defaultcontrol always="true">3</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <controls>
+        <include>GlobalBackground</include>
+        <control type="grouplist" id="3">
+            <description>Button Area</description>
+            <posx>10</posx>
+            <posy>110</posy>
+            <width>300</width>
+            <height>480</height>
+            <itemgap>2</itemgap>
+            <onleft>5</onleft>
+            <onright>5</onright>
+            <onup>3</onup>
+            <ondown>3</ondown>
+            <orientation>vertical</orientation>
+        </control>
+        <control type="grouplist" id="5">
+            <description>Control Area</description>
+            <posx>340</posx>
+            <posy>110</posy>
+            <width>820</width>
+            <height>547</height>
+            <itemgap>2</itemgap>
+            <onleft>3</onleft>
+            <onright>3</onright>
+            <onup>5</onup>
+            <ondown>5</ondown>
+            <orientation>vertical</orientation>
+        </control>
+        <control type="button" id="7">
+            <description>Default Button</description>
+			<include>Big_Button</include>
+            <align>left</align>
+        </control>
+        <control type="radiobutton" id="8">
+            <description>Default Radio Button</description>
+			<include>Big_Button</include>
+            <radioposx>770</radioposx>
+            <align>left</align>
+        </control>
+        <control type="spincontrolex" id="9">
+            <description>Default Spin Control</description>
+			<include>Big_Button</include>
+            <align>left</align>
+        </control>
+        <control type="button" id="10">
+            <description>Default Category Button</description>
+			<include>Big_Button</include>
+            <align>left</align>
+        </control>
+    </controls>
+</window>

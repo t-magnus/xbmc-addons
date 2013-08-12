@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_51_List_Programs">
+        <description>List View (id=51)</description>
+        <control type="list" id="51">
+            <posx>40</posx>
+            <posy>100</posy>
+            <width>1200</width>
+            <height>520</height>
+            <onleft>5000</onleft>
+            <onright>-</onright>
+            <onup>51</onup>
+            <ondown>51</ondown>
+            <pagecontrol>60</pagecontrol>
+            <viewtype label="uTorrent">list</viewtype>
+            <scrolltime>200</scrolltime>
+            <animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+                <effect type="fade" start="100" end="50" time="200" />
+                <effect type="zoom" center="1290,540" start="100" end="90" time="200" />
+            </animation>
+            <itemlayout width="1200" height="46">
+                <control type="image">
+                    <width>1200</width>
+                    <height>44</height>
+                    <texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>BigButtonNF</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <width>1180</width>
+                    <font>Medium</font>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout width="1200" height="46">
+                <control type="image">
+                    <width>1200</width>
+                    <height>44</height>
+                    <texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>FF999999</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>10</posx>
+                    <width>1180</width>
+                    <font>Medium</font>
+                    <textcolor>Focused</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </focusedlayout>
+        </control>
+        <control type="image">
+            <posx>140r</posx>
+            <posy>580</posy>
+            <width>100</width>
+            <height>100</height>
+            <aspectratio align="center" aligny="top">keep</aspectratio>
+            <texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+            <bordersize>8</bordersize>
+            <visible>!IsEmpty(ListItem.Icon) + Control.HasFocus(51)</visible>
+        </control>
+    </include>
+</includes>

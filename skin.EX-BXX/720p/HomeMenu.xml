@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <include name="HomeMenu">
+		<control type="list" id="9000">
+			<posx>10</posx>
+			<posy>100</posy>
+			<width>1200</width>
+			<height>720</height>
+			<onright>9000</onright>
+			<onleft>9000</onleft>
+			<onup>1160</onup>
+			<ondown condition=Container(9000).HasFocus(1)>1110</ondown>
+			<ondown condition=Container(9000).HasFocus(2)>1200</ondown>
+			<ondown condition=Container(9000).HasFocus(3)>1210</ondown>
+			<ondown condition=Container(9000).HasFocus(4)>1120</ondown>
+			<ondown condition=Container(9000).HasFocus(5)>1130</ondown>
+			<ondown condition=Container(9000).HasFocus(6)>1140</ondown>
+			<ondown condition=Container(9000).HasFocus(7)>1150</ondown>
+			<ondown condition=Container(9000).HasFocus(11)>1180</ondown>
+			<ondown condition=Container(9000).HasFocus(14)>1301</ondown>
+			<orientation>horizontal</orientation>
+			<focusposition>0</focusposition>
+			<defaultcontrol>14</defaultcontrol>
+			<scrolltime tween="sine" easing="out">200</scrolltime>						
+			<itemlayout width="150" height="50">
+				<control type="label">
+					<posx>75</posx>
+					<posy></posy>
+					<width>150</width>
+					<height>50</height>
+					<font>Menu</font>
+					<align>center</align>
+					<textcolor>MenuNF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>35</width>
+					<height>35</height>
+					<aspectratio aligny="center">keep</aspectratio>
+					<texture>$INFO[ListItem.icon]</texture>
+					<colordiffuse>MenuNF</colordiffuse>
+				</control>
+			</itemlayout>
+			<focusedlayout width="150" height="50">
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>35</width>
+					<height>35</height>
+					<aspectratio aligny="center">keep</aspectratio>
+					<texture>$INFO[ListItem.icon]</texture>
+					<colordiffuse>MenuNF</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>75</posx>
+					<width>150</width>
+					<height>50</height>
+					<font>Menu</font>
+					<align>center</align>
+					<textcolor>Accent</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<posx>75</posx>
+					<posy>25</posy>
+					<width>150</width>
+					<height>50</height>
+					<font>XSmall</font>
+					<align>center</align>
+					<textcolor>Accent</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+					<include>slideinoutLH</include>
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+				</control>
+			</focusedlayout>
+				<content>
+					<item id="10">
+						<label>   $INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</label>
+						<label2>$INFO[Window(Weather).Property(Location)]</label2>
+						<onclick>ActivateWindow(weather)</onclick>
+						<icon>$INFO[Window(weather).Property(Current.FanartCode),special://skin/extras/weather_icon/,.png]</icon>
+						<visible>Weather.IsFetched</visible>
+					</item>
+					<!--item id="14">
+						<label>Home</label>
+						<onclick>ActivateWindow(Home)</onclick>
+						<visible>true</visible>
+					</item-->
+					<item id="4">
+						<label>$LOCALIZE[31090]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(TV)</onclick>
+						<visible allowhiddenfocus="false">System.GetBool(pvrmanager.enabled) + !Skin.HasSetting(homemenu.livetv)</visible>
+						<visible allowhiddenfocus="false">true</visible>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[20343]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(MyVideoLibrary,tvshowtitles)</onclick>
+						<visible allowhiddenfocus="false">Library.HasContent(tvshows) + !Skin.HasSetting(homemenu.tvshows)</visible>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[342]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(MyVideoLibrary,movietitles)</onclick>
+						<visible allowhiddenfocus="false">Library.HasContent(movies) + !Skin.HasSetting(homemenu.movies)</visible>
+					</item>
+					<item id="1">
+						<label>$LOCALIZE[3]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(Videos,Files)</onclick>
+						<visible allowhiddenfocus="false">!Skin.HasSetting(homemenu.videos)</visible>
+					</item>
+					<item id="11">
+						<label>Play</label>
+						<label2>-</label2>
+						<onclick>SetFocus(1180)</onclick>
+						<visible>System.HasMediadvd</visible>
+						<icon>icons/icon_DVD.png</icon>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[2]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(MyMusicLibrary)</onclick>
+						<visible allowhiddenfocus="false">!Skin.HasSetting(homemenu.music)</visible>
+					</item>
+					<item id="6">
+						<label>$LOCALIZE[1]</label>
+						<label2>-</label2>
+						<onclick>SetFocus(1140)</onclick>
+						<visible allowhiddenfocus="false">!Skin.HasSetting(homemenu.pictures)</visible>
+					</item>
+					<item id="7">
+						<label>$LOCALIZE[24001]</label>
+						<label2>-</label2>
+						<onclick>SetFocus(1150)</onclick>
+						<visible allowhiddenfocus="false">!Skin.HasSetting(homemenu.addons)</visible>
+					</item>
+					<item id="12">
+						<label>$LOCALIZE[13350]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(musicplaylist)</onclick>
+						<visible>Player.HasAudio + !Skin.HasSetting(homemenu.playing)</visible>
+					</item>
+					<item id="13">
+						<label>$LOCALIZE[13350]</label>
+						<label2>-</label2>
+						<onclick>ActivateWindow(videoplaylist)</onclick>
+						<visible>Player.HasVideo + !Skin.HasSetting(homemenu.playing)</visible>
+					</item>
+				</content>
+        </control>
+        <include>homeSettings</include>
+		<include>homeStart</include>
+		<include>homeSubMenu</include>
+		<include>HomeWeather</include>
+    </include>
+</includes>

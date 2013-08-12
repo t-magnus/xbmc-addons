@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<window id="151">
+    <defaultcontrol></defaultcontrol>
+    <controls>
+		<control type="group">
+			<posx>673</posx>
+			<posy>10</posy>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="slide" start="0,-180" end="0,0" time="400" tween="cubic" easing="out" />
+				<effect type="fade" start="0" end="100" time="400" />
+			</animation>
+			<animation type="Conditional" condition="Window.IsVisible(fullscreeninfo) | Window.IsVisible(seekbar) | [Window.IsVisible(visualisation) + Player.ShowInfo]" reversible="true">
+				<effect type="slide" start="0,0" end="0,95" time="400" tween="cubic" easing="out" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="100" />
+			</animation>
+			<visible>!Window.IsVisible(volumebar) + !Window.IsVisible(infodialog) + !Window.IsVisible(busydialog)</visible>
+			
+			<control type="image">
+                <description>Image</description>
+                <posx>500r</posx>
+                <posy>-10</posy>
+                <width>500</width>
+                <height>120</height>
+                <aspectratio align="left">stretch</aspectratio>
+                <texture>OSD/BG_Cloud.png</texture>
+				<colordiffuse>ButtonNF</colordiffuse>
+				<visible>Player.HasVideo + VideoPlayer.IsFullscreen</visible>
+            </control>
+			
+			<!-- Heading -->
+
+			<control type="label" id="30">
+				<description>Heading Label</description>
+				<posx>530</posx>
+				<posy>-</posy>
+				<width>775</width>
+				<height>30</height>
+				<align>right</align>
+				<scroll>true</scroll>
+				<font>XSmallCapsBold</font>
+				<textcolor>Title</textcolor>
+			</control>
+
+			<!-- Details -->
+
+			<control type="label" id="31">
+				<posx>530</posx>
+				<posy>20</posy>
+				<width>775</width>
+				<height>30</height>
+				<align>right</align>
+				<scroll>true</scroll>
+				<haspath>true</haspath>
+				<font>XSmallCaps</font>
+				<textcolor>SubTitle</textcolor>
+			</control>
+			
+			
+			<control type="progress" id="32">
+                <description>progress control</description>
+                <posx>70r</posx>
+                <posy>-</posy>
+                <width>50</width>
+                <height>50</height>
+				<texturebg>icons/ToastIconClear.png</texturebg>
+				<midtexture>icons/ToastIconProgress.png</midtexture>
+				<colordiffuse>-</colordiffuse>
+				<reveal>true</reveal>
+				<animation effect="rotate" center="auto" end="-90" time="0" condition="true">Conditional</animation>
+            </control>
+			
+			<!-- Progress Overlay -->
+			
+			<control type="image">
+                <description>Image</description>
+                <posx>70r</posx>
+                <posy>-</posy>
+                <width>50</width>
+                <height>50</height>
+                <aspectratio align="right">keep</aspectratio>
+                <texture>icons\ToastIconDownload.png</texture>
+				<colordiffuse>Green</colordiffuse>
+            </control>
+        </control>
+    </controls>
+</window>

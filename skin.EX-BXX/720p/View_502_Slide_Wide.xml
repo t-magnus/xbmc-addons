@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_Slide_Wide">
+        <description>Landscape View (id=502)</description>
+        <control type="fixedlist" id="502">
+            <posx>-285</posx>
+            <posy>175</posy>
+            <width>1700</width>
+            <height>555</height>
+            <onleft>502</onleft>
+            <onright>502</onright>
+            <onup>5000</onup>
+            <ondown>-</ondown>
+            <pagecontrol>25</pagecontrol>
+            <orientation>Horizontal</orientation>
+            <viewtype label="Landscape">list</viewtype>
+			<focusposition>1</focusposition>
+            <preloaditems>2</preloaditems>
+            <scrolltime tween="Quadratic" easing="Out">350</scrolltime>
+            <animation type="Conditional" condition="ControlGroup(5000).HasFocus()">
+				<effect type="Slide" start="0" end="300" time="350" delay="600" tween="quadratic" />
+			</animation>
+			<itemlayout width="400" height="225">
+				<control type="image">
+					<posx>100</posx>
+					<posy>-</posy>
+					<width>200</width>
+					<height>200</height>
+					<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+					<bordersize>-</bordersize>
+					<aspectratio aligny="center">keep</aspectratio>
+					<visible>SubString(ListItem.Icon,Default) + !Window.IsVisible(movieinformation)</visible>
+				</control>
+				<control type="group">
+					<visible>!SubString(ListItem.Icon,Default) + !Window.IsVisible(movieinformation)</visible>
+					<control type="image">
+						<posy>220</posy>
+						<include>Thumb_Slide</include>
+						<texture border="5" background="true" flipy="true" diffuse="ViewPoster/Poster_Matte_NF_Reflect.png">backgrounds/BG_White_Outline.png</texture>
+						<fadetime>200</fadetime>
+						<colordiffuse>ViewsNF</colordiffuse>
+						<aspectratio scalediffuse="true">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<posy>220</posy>
+						<include>Thumb_Slide</include>
+						<texture background="true" flipy="true" diffuse="ViewPoster/Poster_Matte_NF_Reflect.png">$INFO[ListItem.Art(fanart)]</texture>
+						<fadetime>200</fadetime>
+						<bordersize>5</bordersize>
+						<colordiffuse>ViewsNF</colordiffuse>
+						<aspectratio scalediffuse="true">stretch</aspectratio>
+						<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+					</control>
+					<control type="image">
+						<posy>220</posy>
+						<include>Thumb_Slide</include>
+						<texture background="true" flipy="true" diffuse="ViewPoster/Poster_Matte_NF_Reflect.png">$INFO[ListItem.Art(thumb)]</texture>
+						<fadetime>200</fadetime>
+						<bordersize>5</bordersize>
+						<colordiffuse>ViewsNF</colordiffuse>
+						<aspectratio scalediffuse="true">stretch</aspectratio>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture border="5">backgrounds/BG_White_Outline.png</texture>
+						<colordiffuse>ViewsNF</colordiffuse>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
+						<colordiffuse>ViewsNF</colordiffuse>
+						<bordersize>5</bordersize>
+						<aspectratio align="center">scale</aspectratio>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+						<colordiffuse>ViewsNF</colordiffuse>
+						<bordersize>5</bordersize>
+						<aspectratio align="center">scale</aspectratio>
+						<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+						<colordiffuse>ViewsNF</colordiffuse>
+						<bordersize>5</bordersize>
+						<aspectratio align="center">Scale</aspectratio>
+						<visible>Container.Content(seasons)</visible>
+					</control>
+				</control>
+			</itemlayout>
+            <focusedlayout width="400" height="225">
+				<control type="image">
+					<posx>100</posx>
+					<posy>-</posy>
+					<width>200</width>
+					<height>200</height>
+                    <include>Poster_SlideFO</include>
+                    <texture background="true">$INFO[ListItem.ActualIcon]</texture>
+					<bordersize>-</bordersize>
+                    <aspectratio align="right">keep</aspectratio>
+					<colordiffuse>-</colordiffuse>
+					<visible>SubString(ListItem.Icon,Default)</visible>
+					<include>focus_Wide</include>
+                </control>
+				<control type="group">
+					<visible>!SubString(ListItem.Icon,Default)</visible>
+					<animation type="Conditional" condition="Control.HasFocus(50)">
+						<effect type="slide" start="0,0" end="-750,0"  tween="Quadratic" easing="Out" time="350" />
+					</animation>
+					<control type="image">
+						<posx>-25</posx>
+						<posy>225</posy>
+						<width>450</width>
+						<height>75</height>
+						<include>Poster_SlideFO</include>
+						<texture border="5">ViewPoster/DropShadow.png</texture>
+						<colordiffuse>DropShadow</colordiffuse>
+						<include>focus_Wide3</include>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture border="5">backgrounds/BG_White_Outline.png</texture>
+						<colordiffuse>Accent</colordiffuse>
+						<include>focus_Wide2</include>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture border="5">backgrounds/BG_White.png</texture>
+						<bordersize>1</bordersize>
+						<colordiffuse>DialogBackground</colordiffuse>
+						<include>focus_Wide</include>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture background="true">$INFO[ListItem.Art(thumb)]</texture>
+						<bordersize>5,5,5,5</bordersize>
+						<aspectratio align="center">scale</aspectratio>
+						<include>focus_Wide</include>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+						<bordersize>5,5,5,5</bordersize>
+						<aspectratio align="center">scale</aspectratio>
+						<include>focus_Wide</include>
+						<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+					</control>
+					<control type="image">
+						<include>Thumb_Slide</include>
+						<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+						<bordersize>5,5,5,5</bordersize>
+						<aspectratio align="right">scale</aspectratio>
+						<visible>Container.Content(seasons)</visible>
+						<include>focus_Wide</include>
+					</control>
+				</control>
+            </focusedlayout>
+        </control>
+	</include>
+</includes>

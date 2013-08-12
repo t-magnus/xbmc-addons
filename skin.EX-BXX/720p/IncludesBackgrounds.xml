@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include name="GlobalOverlay">
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture>backgrounds/background.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<visible>true</visible>
+			<animation effect="fade" start="0" end="OverlayOpacity" condition="true">Conditional</animation>
+        </control>
+    </include>
+	
+	<include name="GlobalBackground">
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture flipx="false">backgrounds/background.png</texture>
+            <aspectratio>stretch</aspectratio>
+            <visible>SubString(Skin.CurrentColourTheme,Default)</visible>
+        </control>
+		
+		<control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture flipx="false">backgrounds/BG_White.png</texture>
+			<colordiffuse>SolidBackground</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+            <visible>!SubString(Skin.CurrentColourTheme,Default)</visible>
+        </control>
+	</include>
+	
+    <include name="HomeBackground">
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture flipx="false">backgrounds/background.png</texture>
+            <aspectratio>stretch</aspectratio>
+            <visible>!Skin.HasSetting(Background.Solid)</visible>
+        </control>
+		
+		<control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture flipx="false">backgrounds/BG_White.png</texture>
+			<colordiffuse>SolidBackground</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+            <visible>Skin.HasSetting(Background.Solid)</visible>
+        </control>
+		
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<texture>$INFO[Container(6000).ListItem.Property(Fanart)]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(6000) + Skin.HasSetting(slideshow.fanart)</visible>
+		</control>
+		
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<texture>$INFO[Container(6025).ListItem.Property(Fanart)]</texture>
+			<fadetime>600</fadetime>
+			<visible>Control.HasFocus(6025) + Skin.HasSetting(slideshow.fanart)</visible>
+		</control>
+		
+		<control type="videowindow">
+			<include>Dimensions_Fullscreen</include>
+			<visible>Skin.HasSetting(NoBackgroundVideo) + Player.HasVideo</visible>
+		</control>
+		
+		<control type="multiimage">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio>scale</aspectratio>
+			<imagepath background="true">$INFO[Skin.String(slideshow.custom)]</imagepath>
+			<timeperimage>10000</timeperimage>
+			<fadetime>850</fadetime>
+			<randomize>true</randomize>
+			<visible>Skin.HasSetting(slideshow.fanart) + !Control.HasFocus(6000) + !Control.HasFocus(6025) + ![Player.HasVideo + Skin.HasSetting(NoBackgroundVideo)]</visible>
+			<loop>yes</loop>
+		</control>
+    </include>
+
+</includes>

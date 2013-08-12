@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<!-- Recently added Movies -->
+	<include name="MovieWidget">
+		<control type="group">
+			<include>Slide_NowPlaying</include>
+			<visible>Control.HasFocus(6000)</visible>
+			<posx>175</posx>
+			<posy>250</posy>
+			<animation effect="fade" delay="600" start="0" end="100" time="350" tween="cubic" easing="out">visible</animation>
+			<control type="image">
+				<posx>-</posx>
+				<posy>-</posy>
+				<width>525</width>
+				<height>185</height>
+				<texture>backgrounds/BG_White.png</texture>
+				<colordiffuse>SubmenuFO</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>362</posx>
+				<posy>12</posy>
+				<width>175</width>
+				<height>160</height>
+				<aspectratio aligny="top" align="center">keep</aspectratio>
+				<texture>$INFO[Container(6000).ListItem.Property(Poster)]</texture>
+			</control>
+			<control type="grouplist">
+				<posx>-125</posx>
+				<posy>10</posy>
+				<width>500</width>
+				<itemgap>5</itemgap>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>30</height>
+					<label>$INFO[Container(6000).ListItem.Label]</label>
+					<font>Large</font>
+					<align>right</align>
+					<textcolor>Title</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>25</height>
+					<label>($INFO[Container(6000).ListItem.Property(Year)])</label>
+					<font>Medium</font>
+					<align>right</align>
+					<textcolor>Title</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6000).ListItem.Property(Genre)]</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>Accent</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6000).ListItem.Property(Studio)]</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6000).ListItem.Property(Rating)] stars</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6000).ListItem.Property(Runtime)] Min</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+			</control>
+		</control>
+		<control type="panel" id="6000">
+			<posy>125</posy>
+			<width>875</width>
+			<height>127</height>
+			<onup>1200</onup>
+			<ondown>3</ondown>
+			<onleft>6000</onleft>
+			<onright>6000</onright>
+			<orientation>horizontal</orientation>
+			<pagecontrol>25</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<defaultcontrol always="true">1</defaultcontrol>
+			<visible>Container(1200).HasFocus(3)</visible>
+			<animation effect="fade" delay="350" start="0" end="100" time="350" tween="cubic" easing="out" reversible="true">visible</animation>
+			<animation effect="fade" delay="0" start="100" end="0" time="350" tween="cubic" easing="out" reversible="true">hidden</animation>
+			<itemlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuDisabled</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<visible>Control.HasFocus(1200) | Control.HasFocus(6000)</visible>
+					<colordiffuse>SubmenuNF</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuLabel</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuSelected</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<visible>Control.HasFocus(1200) | Control.HasFocus(6000)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuFO</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="top" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Poster)]</texture>
+					<visible>IsEmpty(ListItem.Property(Fanart))</visible>
+				</control>				
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="top" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Fanart)]</texture>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>NewMovieContent</include>
+			</content>
+		</control>
+
+		<control type="group">
+			<include>Slide_NowPlaying</include>
+			<visible>Control.HasFocus(6010)</visible>
+			<posx>175</posx>
+			<posy>250</posy>
+			<animation effect="fade" delay="600" start="0" end="100" time="350" tween="cubic" easing="out">visible</animation>
+			<control type="image">
+				<posx>-</posx>
+				<posy>-</posy>
+				<width>525</width>
+				<height>185</height>
+				<texture>backgrounds/BG_White.png</texture>
+				<colordiffuse>SubmenuFO</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>362</posx>
+				<posy>12</posy>
+				<width>175</width>
+				<height>160</height>
+				<aspectratio aligny="top" align="center">keep</aspectratio>
+				<texture>$INFO[Container(6010).ListItem.Property(Poster)]</texture>
+			</control>
+			<control type="grouplist">
+				<posx>-125</posx>
+				<posy>10</posy>
+				<width>500</width>
+				<itemgap>5</itemgap>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>30</height>
+					<label>$INFO[Container(6010).ListItem.Label]</label>
+					<font>Large</font>
+					<align>right</align>
+					<textcolor>Title</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>25</height>
+					<label>($INFO[Container(6010).ListItem.Property(Year)])</label>
+					<font>Medium</font>
+					<align>right</align>
+					<textcolor>Title</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6010).ListItem.Property(Genre)]</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>Accent</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6010).ListItem.Property(Studio)]</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6010).ListItem.Property(Rating)] stars</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[Container(6010).ListItem.Property(Runtime)] Min</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+			</control>
+		</control>
+		
+		<control type="panel" id="6010">
+			<posy>125</posy>
+			<width>875</width>
+			<height>127</height>
+			<onup>1200</onup>
+			<ondown>3</ondown>
+			<onleft>6010</onleft>
+			<onright>6010</onright>
+			<orientation>horizontal</orientation>
+			<pagecontrol>25</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<defaultcontrol always="true">1</defaultcontrol>
+			<visible>Container(1200).HasFocus(5)</visible>
+			<animation effect="fade" delay="350" start="0" end="100" time="350" tween="cubic" easing="out" reversible="true">visible</animation>
+			<animation effect="fade" delay="0" start="100" end="0" time="350" tween="cubic" easing="out" reversible="true">hidden</animation>
+			<itemlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuDisabled</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<visible>Control.HasFocus(1200) | Control.HasFocus(6010)</visible>
+					<colordiffuse>SubmenuNF</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuLabel</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuSelected</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<visible>Control.HasFocus(1200) | Control.HasFocus(6010)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuFO</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="top" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Poster)]</texture>
+					<visible>IsEmpty(ListItem.Property(Fanart))</visible>
+				</control>				
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="top" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Fanart)]</texture>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>RecommendedMovieContent</include>
+			</content>
+		</control>
+	</include>
+
+	<!-- Recently added Episodes -->
+	<include name="NewEpisodeGadget">
+		<control type="group">
+			<include>Slide_NowPlaying</include>
+			<visible>Control.HasFocus(6025)</visible>
+			<posx>175</posx>
+			<posy>250</posy>
+			<animation effect="fade" delay="600" start="0" end="100" time="350" tween="cubic" easing="out">visible</animation>
+			<control type="image">
+				<posx>-</posx>
+				<posy>-</posy>
+				<width>525</width>
+				<height>185</height>
+				<texture>backgrounds/BG_White.png</texture>
+				<colordiffuse>SubmenuFO</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>362</posx>
+				<posy>12</posy>
+				<width>175</width>
+				<height>160</height>
+				<aspectratio aligny="top" align="center">keep</aspectratio>
+				<texture>$INFO[Container(6025).ListItem.Property(Poster)]</texture>
+			</control>
+			<control type="grouplist">
+				<posx>-125</posx>
+				<posy>10</posy>
+				<width>500</width>
+				<itemgap>5</itemgap>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>40</height>
+					<label>$INFO[Container(6025).ListItem.Property(Title)]</label>
+					<font>Large</font>
+					<align>right</align>
+					<textcolor>Title</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>30</height>
+					<label>$INFO[Container(6025).ListItem.Property(EpisodeTitle)]</label>
+					<font>MediumLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>30</height>
+					<label>season $INFO[Container(6025).ListItem.Property(SeasonNum)]-episode $INFO[Container(6025).ListItem.Property(EpisodeNum)]</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>-</posy>
+					<width>500</width>
+					<height>30</height>
+					<label>$INFO[Container(6025).ListItem.Property(Rating)] stars</label>
+					<font>SmallLow</font>
+					<align>right</align>
+					<textcolor>SubTitle</textcolor>
+					<aligny>center</aligny>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+			</control>
+		</control>
+
+		<control type="panel" id="6025">
+			<posy>125</posy>
+			<width>875</width>
+			<height>127</height>
+			<onup>1210</onup>
+			<ondown>-</ondown>
+			<onleft>6025</onleft>
+			<onright>6025</onright>
+			<orientation>horizontal</orientation>
+			<pagecontrol>25</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<focusposition>0</focusposition>
+			<defaultcontrol always="true">1</defaultcontrol>
+			<itemlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuDisabled</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<visible>Control.HasFocus(1210) | Control.HasFocus(6025)</visible>
+					<colordiffuse>SubmenuNF</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Property(Title)]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuLabel</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Property(Title)]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuSelected</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+					<visible>Control.HasFocus(1210) | Control.HasFocus(6025)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuFO</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="center" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.Property(Fanart)]</texture>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="center" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.thumb]</texture>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>$INFO[Window.Property(RecentEpisode.1.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.1.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.1.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.1.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.1.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.1.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.1.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.1.Plot)]</property>
+				</item>
+				<item id="2">
+					<label>$INFO[Window.Property(RecentEpisode.2.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.2.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.2.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.2.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.2.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.2.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.2.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.2.Plot)]</property>
+				</item>
+				<item id="3">
+					<label>$INFO[Window.Property(RecentEpisode.3.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.3.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.3.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.3.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.3.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.3.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.3.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.3.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.3.Plot)]</property>
+				</item>
+				<item id="4">
+					<label>$INFO[Window.Property(RecentEpisode.4.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.4.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.4.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.4.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.4.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.4.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.4.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.4.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.4.Plot)]</property>
+				</item>
+				<item id="5">
+					<label>$INFO[Window.Property(RecentEpisode.5.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.5.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.5.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.5.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.5.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.5.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.5.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.5.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.5.Plot)]</property>
+				</item>
+				<item id="6">
+					<label>$INFO[Window.Property(RecentEpisode.6.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.6.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.6.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.6.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.6.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.6.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.6.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.6.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.6.Plot)]</property>
+				</item>
+				<item id="7">
+					<label>$INFO[Window.Property(RecentEpisode.7.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.7.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.7.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.7.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.7.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.7.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.7.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.7.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.7.Plot)]</property>
+				</item>
+				<item id="8">
+					<label>$INFO[Window.Property(RecentEpisode.8.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.8.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.8.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.8.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.8.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.8.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.8.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.8.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.8.Plot)]</property>
+				</item>
+				<item id="9">
+					<label>$INFO[Window.Property(RecentEpisode.9.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.9.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.9.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.9.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.9.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.9.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.9.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.9.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.9.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.9.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.9.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.9.Plot)]</property>
+				</item>
+				<item id="10">
+					<label>$INFO[Window.Property(RecentEpisode.10.Title)]</label>
+					<onclick>$INFO[Window(Home).Property(RecentEpisode.10.Play)]</onclick>
+					<icon>$INFO[Window(Home).Property(RecentEpisode.10.Art(tvshow.poster))]</icon>
+					<thumb>$INFO[Window(Home).Property(RecentEpisode.10.Art(thumb))]</thumb>
+					<property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.10.Art(tvshow.fanart))]</property>
+					<property name="Poster">$INFO[Window(Home).Property(RecentEpisode.10.Art(tvshow.poster))]</property>
+					<property name="Title">$INFO[Window(Home).Property(RecentEpisode.10.TVshowTitle)]</property>
+					<property name="EpisodeTitle">$INFO[Window(Home).Property(RecentEpisode.10.Title)]</property>
+					<property name="EpisodeNum">$INFO[Window(Home).Property(RecentEpisode.10.Episode)]</property>
+					<property name="SeasonNum">$INFO[Window(Home).Property(RecentEpisode.10.Season)]</property>
+					<property name="Rating">$INFO[Window(Home).Property(RecentEpisode.10.Rating)]</property>
+					<property name="Plot">$INFO[Window(Home).Property(RecentEpisode.10.Plot)]</property>
+				</item>
+			</content>
+		</control>
+	</include>
+
+	<!-- Video Add-ons -->
+	<include name="VideoAddonsGadget">
+		<control type="panel" id="6035">
+			<posy>125</posy>
+			<width>875</width>
+			<height>127</height>
+			<onup>1110</onup>
+			<ondown>-</ondown>
+			<onleft>6035</onleft>
+			<onright>6035</onright>
+			<orientation>horizontal</orientation>
+			<pagecontrol>25</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<focusposition>0</focusposition>
+			<defaultcontrol always="true">1</defaultcontrol>
+			<itemlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuDisabled</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<visible>Control.HasFocus(1110) | Control.HasFocus(6035)</visible>
+					<colordiffuse>SubmenuNF</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>5</posy>
+					<width>153</width>
+					<height>40</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>MediumLow</font>
+					<align>left</align>
+					<textcolor>SubmenuLabel</textcolor>
+					<aligny>top</aligny>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</itemlayout>
+			<focusedlayout width="175" height="125">
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<texture>backgrounds/BG_White.png</texture>
+					<colordiffuse>SubmenuFO</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<posx>2</posx>
+					<posy>2</posy>
+					<width>173</width>
+					<height>123</height>
+					<aspectratio aligny="center" align="center">scale</aspectratio>
+					<texture>$INFO[ListItem.icon]</texture>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>$INFO[system.addontitle(Skin.String(HomeVideosButton1))]</label>
+					<onclick>RunAddon($INFO[Skin.String(HomeVideosButton1)])</onclick>
+					<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton1))]</icon>
+					<visible>!IsEmpty(Skin.String(HomeVideosButton1))</visible>
+					<thumb>-</thumb>
+				</item>
+				<item id="2">
+					<label>$INFO[system.addontitle(Skin.String(HomeVideosButton2))]</label>
+					<onclick>RunAddon($INFO[Skin.String(HomeVideosButton2)])</onclick>
+					<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton2))]</icon>
+					<visible>!IsEmpty(Skin.String(HomeVideosButton2))</visible>
+					<thumb>-</thumb>
+				</item>
+				<item id="3">
+					<label>$INFO[system.addontitle(Skin.String(HomeVideosButton3))]</label>
+					<onclick>RunAddon($INFO[Skin.String(HomeVideosButton3)])</onclick>
+					<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton3))]</icon>
+					<visible>!IsEmpty(Skin.String(HomeVideosButton3))</visible>
+					<thumb>-</thumb>
+				</item>
+				<item id="4">
+					<label>$INFO[system.addontitle(Skin.String(HomeVideosButton4))]</label>
+					<onclick>RunAddon($INFO[Skin.String(HomeVideosButton4)])</onclick>
+					<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton4))]</icon>
+					<visible>!IsEmpty(Skin.String(HomeVideosButton4))</visible>
+					<thumb>-</thumb>
+				</item>
+				<item id="5">
+					<label>$INFO[system.addontitle(Skin.String(HomeVideosButton5))]</label>
+					<onclick>RunAddon($INFO[Skin.String(HomeVideosButton5)])</onclick>
+					<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton5))]</icon>
+					<visible>!IsEmpty(Skin.String(HomeVideosButton5))</visible>
+					<thumb>-</thumb>
+				</item>
+			</content>
+		</control>
+	</include>	
+
+</includes>

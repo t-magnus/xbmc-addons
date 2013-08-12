@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<window id="25">
+	<defaultcontrol always="true">501</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<views>50,500,501,502,503,504</views>
+	<onload condition="Window.Previous(home) + !Skin.HasSetting(DisabledSplash)">ActivateWindow(60)</onload>
+	<!--onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload-->
+	<controls>
+		<control type="radiobutton" id="19">
+			<description>Filter (hidden)</description>
+			<include>HiddenButton</include>
+		</control>
+		
+		<include>GlobalBackground</include>
+
+		<!--  Fanart Diffuse -->
+		
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<fadetime>400</fadetime>
+			<colordiffuse>-</colordiffuse>
+			<texture background="true" diffuse="backgrounds/BG_GradientFanart.png">$INFO[ListItem.Art(fanart)]</texture>
+			<include>Animation_CommonFade</include>
+		</control>
+
+		<include>View_50_List</include>
+		<include>View_Slide_Wide</include>
+		<include>View_Slide_Wide_Wrap</include>
+		<include>View_Slide_Poster</include>
+		<include>View_Slide_Poster_Wrap</include>
+		<include>View_Tile_Poster</include>
+
+		<!-- Settings Hint -->
+
+		<control type="group">
+			<control type="image">
+				<posx>615</posx>
+				<posy>-10</posy>
+				<width>50</width>
+				<height>25</height>
+				<texture border="10">backgrounds/menu_Hint.png</texture>
+				<colordiffuse>SettingsHint</colordiffuse>
+				<visible>!ControlGroup(5000).HasFocus()</visible>
+			</control>
+			<control type="image">
+				<posx>635</posx>
+				<posy>2</posy>
+				<width>10</width>
+				<height>10</height>
+				<texture>icons/icon_Settings.png</texture>
+				<colordiffuse>Title</colordiffuse>
+				<visible>!ControlGroup(5000).HasFocus()</visible>
+			</control>
+		</control>
+
+		<!-- Settings -->
+		
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>250</width>
+			<height>720</height>
+			<include>dialogWindow</include>
+			<visible allowhiddenfocus="true">ControlGroup(5000).HasFocus()</visible>
+			<animation effect="Slide" start="-250" end="0" time="350" delay="600" tween="quadratic">Visible</animation>
+			<animation effect="Slide" start="0" end="-250" time="350" tween="quadratic">Hidden</animation>
+		</control>
+
+		<control type="grouplist" id="5000">
+			<posx>20</posx>
+			<posy>150</posy>
+			<width>230</width>
+			<height>600</height>
+			<itemgap>0</itemgap>
+			<onleft>50</onleft>
+			<onright>50</onright>
+			<onup>5000</onup>
+			<ondown>5000</ondown>
+			<orientation>vertical</orientation>
+			<visible allowhiddenfocus="true">ControlGroup(5000).HasFocus()</visible>
+			<animation effect="Slide" start="-300" end="0" time="350" delay="600" tween="quadratic">Visible</animation>
+			<animation effect="Slide" start="0" end="-300" time="350" tween="quadratic">Hidden</animation>
+			<animation effect="Slide" start="0" end="0,-30" time="350" tween="quadratic" condition="Player.HasVideo">Conditional</animation>
+			
+			<control type="button" id="2">
+				<description>View</description>
+				<align>left</align>
+			</control>
+			<control type="button" id="3">
+				<description>Sort</description>
+				<align>left</align>
+			</control>
+			<control type="togglebutton" id="4">
+				<description>Ascending</description>
+				<align>left</align>
+				<label>584</label>
+				<altlabel>585</altlabel>
+			</control>
+			<control type="radiobutton" id="20">
+				<visible>Container.CanFilterAdvanced</visible>
+				<description>Filter</description>
+				<label>587</label>
+				<selected>Container.Filtered</selected>
+				<align>left</align>
+				<onclick>right</onclick>
+				<onclick>Filter</onclick>
+			</control>
+			<control type="togglebutton" id="14">
+				<description>Watched Toggle</description>
+				<align>left</align>
+				<label>20367</label>
+				<altlabel>31900</altlabel>
+			</control>
+			<control type="radiobutton" id="7">
+				<description>Stack</description>
+				<align>left</align>
+				<label>346</label>
+			</control>
+			<control type="button" id="8">
+				<description>Search</description>
+				<align>left</align>
+				<label>137</label>
+			</control>
+			<control type="radiobutton" id="16">
+				<description>PartyMode</description>
+				<align>left</align>
+				<label>589</label>
+			</control>
+			<control type="radiobutton" id="17">
+				<description>Flatten</description>
+				<align>left</align>
+				<label>20411</label>
+			</control>
+			<control type="button" id="98">
+				<description>Open Player Controls</description>
+				<align>left</align>
+				<label>31010</label>
+				<onclick>ActivateWindow(playercontrols)</onclick>
+				<visible>Player.HasMedia</visible>
+			</control>
+		</control>		
+
+		<!-- Video Library Metadata -->
+		<control type="group">
+			<posy>475</posy>
+			<visible>!Window.IsVisible(movieinformation) + !Control.HasFocus(50)</visible>
+			<animation type="Conditional" condition="system.getbool(lookandfeel.enablerssfeeds)">
+				<effect type="slide" start="0,0" end="0,-15" time="200" />
+			</animation>
+
+			<control type="image">
+				<posx>640</posx>
+				<posy>10</posy>
+				<width>10</width>
+				<height>180</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>pvr/separator-y.png</texture>
+				<colordiffuse>Title</colordiffuse>
+				<visible>[Control.HasFocus(502) | Control.HasFocus(501) | Control.HasFocus(500)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+
+			</control>
+
+			<control type="grouplist" id="1000">
+				<posx>680</posx>
+				<posy>-</posy>
+				<itemgap>10</itemgap>
+				<visible>[Control.HasFocus(502) | Control.HasFocus(501) | Control.HasFocus(500)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+
+
+				<!-- Line 1 -->
+				<control type="grouplist">
+					<posx>-</posx>
+					<posy>-</posy>
+					<width>600</width>
+					<height>50</height>
+					<itemgap>10</itemgap>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="label">
+						<width>550</width>
+						<height>45</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>XLargeLow</font>
+						<textcolor>Title</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					</control>
+					<control type="label">
+						<width>550</width>
+						<height>45</height>
+						<label>$INFO[ListItem.Title]</label>
+						<font>XLargeLow</font>
+						<textcolor>Title</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+				</control>
+
+				<!-- Line2 -->
+
+				<control type="label">
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Genre]</label>
+					<font>SmallLow</font>
+					<textcolor>SubTitle</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<visible>Container.Content(movies)</visible>
+				</control>
+				<control type="label">
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101] $LOCALIZE[20360]]</label>
+					<font>SmallLow</font>
+					<textcolor>SubTitle</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<visible>[Control.IsVisible(502) | Control.IsVisible(501) | Control.IsVisible(500)] + [Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.TVShowTitle)</visible>
+				</control>
+				<control type="label">
+					<width>500</width>
+					<height>20</height>
+					<label>$LOCALIZE[31087] $INFO[ListItem.Season] • $LOCALIZE[31088] $INFO[ListItem.Episode]</label>
+					<font>Small</font>
+					<textcolor>SubTitle</textcolor>
+					<visible>[Control.IsVisible(502) | Control.IsVisible(501) | Control.IsVisible(500)] + Container.Content(episodes) + !IsEmpty(ListItem.Thumb)</visible>
+				</control>
+
+				<!-- Line 3 -->
+
+				<control type="label">
+					<width>500</width>
+					<height>20</height>
+					<label>$INFO[ListItem.Duration] $LOCALIZE[31103]</label>
+					<font>SmallLow</font>
+					<textcolor>SubTitle</textcolor>
+					<visible>!substring(ListItem.Label,Collection) + !Control.IsVisible(50) + Container.Content(episodes) + !Container.Content(movies) + !IsEmpty(ListItem.Thumb)</visible>
+				</control>
+
+				<control type="label">
+					<width>490</width>
+					<height>20</height>
+					<label>$VAR[tvshow_Info.NextAired]</label>
+					<font>SmallLow</font>
+					<textcolor>SubTitle</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<visible>!Control.IsVisible(50) + [Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.TVShowTitle)</visible>
+				</control>
+				<control type="label">
+					<width>700</width>
+					<height>20</height>
+					<label>$VAR[movie_Info.Date]</label>
+					<font>SmallLow</font>
+					<textcolor>SubTitle</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<visible>!substring(ListItem.Label,Collection) + !Control.IsVisible(50) + Container.Content(movies)</visible>
+				</control>
+
+				<!-- Star Rating -->
+
+				<control type="image">
+					<width>85</width>
+					<height>20</height>
+					<texture>rating0.png</texture>
+					<colordiffuse>Rating</colordiffuse>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>!substring(ListItem.Label,Collection) + !Control.IsVisible(50) + !IntegerGreaterThan(ListItem.Rating,0) + !IsEmpty(ListItem.Thumb)</visible>
+				</control>
+				<control type="image">
+					<width>85</width>
+					<height>20</height>
+					<info>ListItem.StarRating</info>
+					<colordiffuse>Rating</colordiffuse>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>!substring(ListItem.Label,Collection) + !Control.IsVisible(50) + IntegerGreaterThan(ListItem.Rating,0)</visible>
+				</control>
+
+				<!-- Media Flags -->	
+
+				<control type="grouplist">
+					<posx>670</posx>
+					<posy>645</posy>
+					<width>555</width>
+					<height>50</height>
+					<itemgap>10</itemgap>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible>!substring(ListItem.Label,Collection)</visible>
+
+					<control type="image">
+						<include>Icons</include>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture fallback="flags/default.png">$VAR[flag_Studio]</texture>
+						<visible>!Control.IsVisible(50) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + ![IsEmpty(ListItem.TVShowTitle) + IsEmpty(ListItem.Title)]</visible>
+					</control>				
+					<control type="image">
+						<description>Common Codec Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.VideoCodec,flags/codec/,.png]</texture>
+						<!-- Don't show if its one of the 500 divx codecs -->
+						<visible>![substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]</visible>
+					</control>
+					<control type="image">
+						<description>Divx Codec Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>flags/codec/divx.png</texture>
+						<visible>[substring(ListItem.VideoCodec,div,left) | stringcompare(ListItem.VideoCodec,dx50)]</visible>
+					</control>
+					<control type="image">
+						<description>Video rez Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.VideoResolution,flags/type/,.png]</texture>
+					</control>
+					<control type="image">
+						<description>Bluray Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>flags/codec/bluray.png</texture>
+						<visible>[substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)] <!--+ !Skin.HasSetting(HideFilenameother_textures/flagging)-->
+						</visible>
+					</control>
+					<control type="image">
+						<description>HDDVD Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>flags/codec/hddvd.png</texture>
+						<visible>substring(ListItem.FilenameAndPath,hddvd)</visible>
+					</control>
+					<control type="image">
+						<description>DVD Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>flags/codec/dvd.png</texture>
+						<visible>[substring(ListItem.FilenameAndPath,dvd) + ![substring(ListItem.FilenameAndPath,hddvd) | substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip)]] <!--+ !Skin.HasSetting(HideFilenameother_textures/flagging)-->
+						</visible>
+					</control>
+					<control type="image">
+						<description>TV Types Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>flags/codec/TV.png</texture>
+						<visible>[substring(ListItem.FilenameAndPath,pdtv) | substring(ListItem.FilenameAndPath,hdtv) | substring(ListItem.FilenameAndPath,dsr)] + !Skin.HasSetting(HideFilenameother_textures/flagging)</visible>
+					</control>
+					<control type="group">
+						<width>74</width>
+						<height>50</height>
+						<visible>!SubString(ListItem.Icon,Default) + ![Container.Content(tvshows) | Container.Content(seasons)]</visible>
+						<control type="image">
+							<include>Icons</include>
+							<texture fallback="flags/defaultsound.png">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+						</control>
+						<control type="image">
+							<include>Icons</include>
+							<texture>$INFO[ListItem.AudioChannels,flags/audio/,ch.png]</texture>
+						</control>
+					</control>
+					<control type="image">
+						<description>Aspectratio Image</description>
+						<include>Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.VideoAspect,flags/video/aspectratio/,.png]</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

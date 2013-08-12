@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_Tile_Poster">
+        <description>Posters View (id=502)</description>
+        <control type="panel" id="502">
+            <posx>35</posx>
+            <posy>100</posy>
+            <width>1300</width>
+            <height>370</height>
+            <onleft>502</onleft>
+            <onright>502</onright>
+            <onup>5000</onup>
+            <ondown>-</ondown>
+            <pagecontrol>25</pagecontrol>
+            <orientation>horizontal</orientation>
+            <viewtype label="Poster">list</viewtype>
+            <preloaditems>5</preloaditems>
+			<itemgap>-</itemgap>
+            <scrolltime tween="Cubic" easing="Out">350</scrolltime>
+			<animation type="Conditional" condition="ControlGroup(5000).HasFocus()">
+                <effect type="fade" start="100" end="50" time="200" />
+                <effect type="zoom" center="1290,540" start="100" end="90" time="200" />
+                <effect type="slide" start="0" end="200" time="200" />
+            </animation>
+			<animation type="Focus">
+				<effect type="fade" delay="0" start="0" end="100" reversible="true" time="500" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="250" />
+			</animation>
+            <itemlayout width="135" height="185">
+                <control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture border="5">backgrounds/BG_White.png</texture>
+					<colordiffuse>Title</colordiffuse>
+                </control>
+				<control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture background="true">backgrounds/BG_White.png</texture>
+					<colordiffuse>ButtonNF</colordiffuse>
+					<bordersize>3</bordersize>
+                </control>
+                <control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture>$INFO[ListItem.Icon]</texture>
+					<bordersize>3</bordersize>
+                    <aspectratio align="center">scale</aspectratio>
+                </control>
+				<control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture background="true">overlays/OverlayShine.png</texture>
+                    <bordersize>0</bordersize>
+                    <aspectratio aligny="top">scale</aspectratio>
+                </control>
+				<control type="image">
+					<include>overlay_Watched</include>
+                </control>
+				<control type="image">
+					<include>overlay_Resumable</include>
+                </control>
+            </itemlayout>
+            <focusedlayout width="130" height="180">
+                <control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture border="5" background="true">backgrounds/BG_White.png</texture>
+					<colordiffuse>Accent</colordiffuse>
+                    <include>focus_Panel</include>
+                </control>
+                <control type="image">
+					<posx>-</posx>
+					<posy>-</posy>
+                    <width>130</width>
+                    <height>180</height>
+                    <texture background="true">backgrounds/BG_White.png</texture>
+					<bordersize>3</bordersize>
+					<colordiffuse>ButtonNF</colordiffuse>
+                    <include>focus_Panel</include>
+                </control>
+                <control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture fallback="DefaultAddonNone.png" background="true">$INFO[ListItem.Icon]</texture>
+                    <bordersize>3</bordersize>
+                    <aspectratio align="center">scale</aspectratio>
+                    <include>focus_Panel</include>
+                </control>
+				<control type="image">
+                    <width>130</width>
+                    <height>180</height>
+                    <texture background="true">overlays/OverlayShine.png</texture>
+                    <bordersize>0</bordersize>
+                    <aspectratio aligny="top">scale</aspectratio>
+					<include>focus_Panel</include>
+                </control>
+				<control type="image">
+					<include>overlay_Watched</include>
+					<include>focus_Poster_Overlay</include>
+                </control>
+				<control type="image">
+					<include>overlay_Resumable</include>
+					<include>focus_Poster_Overlay</include>
+                </control>
+            </focusedlayout>
+        </control>
+	</include>
+</includes>
